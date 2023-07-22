@@ -1,64 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>File Sharing App</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .divider:after,
-        .divider:before {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: #fff;
-        }
+    body {
+        background-color: #f8f9fa;
+    }
 
-        .h-custom {
-            height: calc(100% - 73px);
-        }
-
-        @media (max-width: 450px) {
-            .h-custom {
-                height: 100%;
-            }
-        }
+    .h-custom {
+        height: calc(100vh - 73px);
+    }
     </style>
 </head>
-<body class="d-flex align-items-center bg-light" style="height: 100vh;">
-<div class="container mt-5">
-    <section class="vh-100">
-        <div class="container-fluid h-custom">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-        
-                <div class="col-md-6 col-lg-9 col-xl-4 offset-xl-1">
-                    <form action="{{ route('file.store') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="divider d-flex align-items-center my-4">
-                            <p class="text-center fw-bold mx-3 mb-0 fs-h1">File Sharing </p>
-                        </div>
 
-                        <div class="form-outline mb-4">
-                            <input type="file" id="file" name="file" class="form-control form-control-lg"
-                                   placeholder="Select File"/>
-                        </div>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-6 col-xl-6">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h1 class="text-center mb-4">File Sharing</h1>
+                        <form action="{{ route('file.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group mb-4">
+                               
+                                <input type="file" id="file" name="file" class="form-control" />
+                            </div>
 
-                        <div class="text-center text-lg-start mt-4 pt-2">
-                            <button type="submit" class="btn btn-primary"
+                            <div class="text-center text-lg-start mt-4 pt-2">
+                                <button type="submit" class="btn btn-primary"
                                     style="padding-left: 2.5rem; padding-right: 2.5rem; background-color:rgba(107,87,139,0.58)">Upload
-                            </button>
-                            <a href="{{route('home')}}" class="btn btn-secondary"
-                               style="padding-left: 2.5rem; padding-right: 2.5rem;  background-color:rgba(107,87,139,0.58)">home
-                            </a>
-                        </div>
-
-
-                    </form>
+                                </button>
+                                <a href="{{route('home')}}" class="btn btn-secondary"
+                                    style="padding-left: 2.5rem; padding-right: 2.5rem;  background-color:rgba(107,87,139,0.58)">home
+                                </a>
+                              
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-</div>
+    </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

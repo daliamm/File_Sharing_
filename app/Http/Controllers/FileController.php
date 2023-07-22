@@ -60,5 +60,12 @@ class FileController extends Controller
         return response()->download($filePath, $file->name);
     }
 
+    public function delete($id)
+    {
+        $file = File::findOrFail($id);
+        Storage::delete('public/files/' . $file->download_link);
+        $file->delete();
 
+        return redirect()->route('home')->with('success', 'File deleted successfully.');
+    }
 }

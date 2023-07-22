@@ -47,6 +47,9 @@
                                             onclick="copyToClipboard('{{ route('file.download', ['link' => $file->download_link]) }}')">
                                             <p style='color:rgba(107,87,139,0.58)'>Copy</p>
                                         </button>
+                                        <button class="btn btn-sm btn-clean btn-icon" onclick="deleteFile('{{ $file->id }}')">
+                                    <i class="fas fa-trash-alt" style='color:rgba(107,87,139,0.58)'></i>
+                                </button>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -72,6 +75,21 @@
         Swal.fire({
             icon: 'success',
             title: 'Link Copied!',
+        });
+    }
+    function deleteFile(fileId) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'You will not be able to recover this file!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+            }
         });
     }
     </script>
