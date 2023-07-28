@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Validator;
@@ -59,12 +61,20 @@ class FileController extends Controller
 
         return response()->download($filePath, $file->name);
     }
+    // public function copyLink($link)
+    // {
+    //     $tempInput = $link;
+    //     Session::flash('copied_link', $tempInput);
+
+    //     return redirect()->back();
+    // }
     public function delete($id)
     {
-        $file = File::findOrFail($id);
-
-        Storage::delete($file->download_link);
+        $file = File::where('download_link', $id)->firstOrFail();;
+        Storage::delete($file->path);
         $file->delete();
-        return redirect()->route('file.upload')->with('success', 'File deleted successfully!');
+
+        Toastr::success('File Deleted Successfully');
+        return redirect()->route('home');
     }
 }

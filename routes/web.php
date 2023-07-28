@@ -17,6 +17,7 @@ Route::get('/', [FileController::class, 'index'])->name('home');
 Route::get('/upload', [FileController::class, 'upload'])->name('file.upload');
 Route::post('/store', [FileController::class, 'store'])->name('file.store');
 Route::get('/file/{link}', [FileController::class, 'download'])->name('file.download');
-Route::get('/file/{link}/copy', [FileController::class, 'copyLink'])->name('file.copyLink');
+Route::post('/file/{link}/copy', [FileController::class, 'copyLink'])->name('file.copyLink');
 Route::delete('/file/{id}', [FileController::class, 'delete'])->name('file.delete');
+
 
