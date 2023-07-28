@@ -1,0 +1,150 @@
+body, html {
+    overflow: hidden;
+  }
+body {
+    /* background-color: rgba(220, 203, 249, 0.58); */
+   
+        background-image: url('/img/background.jpg'); 
+        background-size: cover; 
+        background-position: center center; 
+        background-repeat: no-repeat; 
+
+}
+
+.file-name {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #000000;
+}
+
+.form__field {
+    width: 400px;
+    height: 40px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    outline: none;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.fas.fa-download {
+    font-size: 21px;
+    color: #99a4ee;
+    padding: 4px;
+}
+
+.fas.fa-download:hover {
+    color: #4051ca;
+}
+
+.fas.fa-copy {
+    font-size: 21px;
+    color: #99a4ee;
+    padding: 4px;
+}
+
+.fas.fa-copy:hover {
+    color: #4051ca;
+}
+
+.fas.fa-trash {
+    font-size: 21px;
+    color: #99a4ee;
+    padding: 4px;
+}
+
+.fas.fa-trash:hover {
+    color: #4051ca;
+}
+
+.fas.fa-house {
+    font-size: 21px;
+    color: #99a4ee;
+    padding: 4px;
+}
+
+.fas.fa-house:hover {
+    color: #4051ca;
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+
+}
+
+.list-group-item .btn {
+    margin-right: 20px;
+}
+/*Upload style */
+body {
+    background-color: rgba(220, 203, 249, 0.58);
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.file-upload-label {
+    background-color: #5268ff;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.upload-icon {
+    margin-right: 8px;
+}
+
+.git_link {
+    background-color: #99a4ee;;
+    color: white;
+    border: none;
+    text-decoration: none;
+    padding: 10px 60px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card {
+    width: 35rem;
+    box-shadow: 0px 4px 10px rgba(137, 123, 123, 0.2);
+}
+
+.form-control {
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    height: 70px;
+    resize: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.list-group-item {
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.button-link {
+    text-decoration: underline;
+}
