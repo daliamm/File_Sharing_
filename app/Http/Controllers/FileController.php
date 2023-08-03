@@ -30,7 +30,7 @@ class FileController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'file' => 'required|file',
+            'file' => 'required|file', 
         ]);
 
         if ($validator->fails()) {
@@ -61,6 +61,17 @@ class FileController extends Controller
 
         return response()->download($filePath, $file->name);
     }
+
+
+
+
+
+
+
+
+
+
+    
     // public function copyLink($link)
     // {
     //     $tempInput = $link;
