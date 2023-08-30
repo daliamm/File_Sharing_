@@ -36,6 +36,8 @@
 
                                     <i class="fas fa-download"></i>
                                     <p style="color: rgba(107, 87, 139, 0.58)">Download</p>
+                                  
+                                      
                                 </a>
                                 <form action="{{ route('file.delete', ['id' => $file->download_link]) }}" method="post">
                                     @csrf
@@ -53,7 +55,10 @@
                                     <p style="color: rgba(107, 87, 139, 0.58)">Home Page</p>
                                 </a>
                             </li>
+                            <li class="list-group-item">Download Count: {{ $file->download_count }}</li>
+
                         </ul>
+                        <!-- <p>Total Downloads:{{-- {{ $file->download_count}}--}}</p> -->
                     </div>
                 </div>
             </div>

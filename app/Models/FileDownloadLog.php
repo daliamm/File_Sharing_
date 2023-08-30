@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class File extends Model
+class FileDownloadLog extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','extension','path','download_link','download_count'];
+    protected $fillable =[
+        'time' , 'ip_address','user_agent', 'file_id'
+    ];
 }
