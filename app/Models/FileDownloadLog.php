@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class FileDownloadLog extends Model
 {
     use HasFactory;
-
-    protected $fillable =[
-        'time' , 'ip_address','user_agent', 'file_id'
+    protected $fillable = ['file_id','time','ip_address','user_agent','country',
     ];
 }

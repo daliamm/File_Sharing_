@@ -16,12 +16,12 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-            // FileDownloaded::class => [
-            //     LogFileDownload::class,
-            // ],
+       
             
             FileDownloaded::class => [
                 FileDownloadedListener::class,
+                LogFileDownloadListener::class,
+
             ],
            
         

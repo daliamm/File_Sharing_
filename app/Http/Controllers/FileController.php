@@ -62,16 +62,6 @@ class FileController extends Controller
        
         return response()->download($filePath, $file->name);
     }
-    //    public function Count($file){
-         
-    //    }   
-    // public function copyLink($link)
-    // {
-    //     $tempInput = $link;
-    //     Session::flash('copied_link', $tempInput);
-
-    //     return redirect()->back();
-    // }
     // public function Count($file){
     //     $file->downloads()->increment();
     // }

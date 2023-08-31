@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('file_download_logs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('file_id')->nullable()->constrained('files','id')->cascadeOnDelete();
             $table->timestamp('time');
-            $table->string('ip_address');
-            $table->string('user_agent');
-            $table->foreignId('file_id')
-            ->nullable()
-            ->constrained()
-            ->nullOnDelete();
+            $table->ipAddress('ip_address');
+            $table->string('user_agent')->nullable();
+            $table->string('country')->nullable();
             $table->timestamps();
         });
     }

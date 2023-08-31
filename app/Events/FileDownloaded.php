@@ -19,8 +19,9 @@ class FileDownloaded implements ShouldBroadcast
     /**
      * Create a new event instance.
      */
-    public function __construct()
+    public function __construct ($file)
     {
+        $this->file = $file;
     }
 
     /**
