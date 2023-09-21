@@ -20,8 +20,7 @@ class EventServiceProvider extends ServiceProvider
             
             FileDownloaded::class => [
                 FileDownloadedListener::class,
-                LogFileDownloadListener::class,
-
+             
             ],
            
         

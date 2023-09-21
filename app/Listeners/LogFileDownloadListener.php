@@ -23,7 +23,6 @@ class LogFileDownloadListener
 
     public function handle(FileDownloaded $event)
     {
-       // $request= request();
         $file = $event->file;
         $request = $event->request;
         $Logdownload = new FileDownloadLog();

@@ -5,6 +5,7 @@ use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 class FileController extends Controller
@@ -16,7 +17,11 @@ class FileController extends Controller
         // foreach ($files as $file) {
         //     $file->download_count = $file->downloads()->count();
         // }
-        return view('index', compact('files'));
+        $urlDownload = [];
+        foreach ($files as $file) {
+            $urlDownload[$file->id] = URL::temporarySignedRoute('file.download.signed', now()->addHour(), ['link' => $file->download_link]);
+        }
+        return view('index', compact('files','urlDownload'));
 
     }
 
@@ -58,7 +63,8 @@ class FileController extends Controller
         $file = File::where('download_link', $link)->firstOrFail();
         $filePath = Storage::path($file->path);
        //$file->increment('download_count'); 
-        event(new FileDownloaded($file));
+       $url = URL::temporarySignedRoute('file.download.signed', now()->addHour(), ['link' => $file->download_link]);
+       event(new FileDownloaded($file->id, request()->ip(), request()->userAgent()));
        
         return response()->download($filePath, $file->name);
     }

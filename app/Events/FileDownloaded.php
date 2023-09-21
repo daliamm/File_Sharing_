@@ -14,14 +14,18 @@ use Symfony\Component\Mime\Part\File;
 class FileDownloaded implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    public $file;
+    public $fileId;
+    public $ipAddress;
+    public $userAgent;
 
     /**
      * Create a new event instance.
      */
-    public function __construct ($file)
+    public function __construct ($fileId, $ipAddress, $userAgent)
     {
-        $this->file = $file;
+        $this->fileId = $fileId;
+        $this->ipAddress = $ipAddress;
+        $this->userAgent = $userAgent;
     }
 
     /**
